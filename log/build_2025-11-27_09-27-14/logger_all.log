@@ -1,0 +1,312 @@
+[0.270s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.271s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7068cf59acf0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7068cf546a80>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7068cf546a80>>, mixin_verb=('build',))
+[0.381s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.382s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.382s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.382s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.382s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.382s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.382s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/mohanarangan-t-r/teleop_ws'
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.383s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.383s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.383s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.383s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.383s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.383s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.383s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_bringup) by extension 'ignore'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_bringup) by extension 'ignore_ament_install'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_bringup) by extensions ['colcon_pkg']
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_bringup) by extension 'colcon_pkg'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_bringup) by extensions ['colcon_meta']
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_bringup) by extension 'colcon_meta'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_bringup) by extensions ['ros']
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_bringup) by extension 'ros'
+[0.450s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rover_bringup' with type 'ros.ament_python' and name 'rover_bringup'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extensions ['ignore', 'ignore_ament_install']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extension 'ignore'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extension 'ignore_ament_install'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extensions ['colcon_pkg']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extension 'colcon_pkg'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extensions ['colcon_meta']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extension 'colcon_meta'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extensions ['ros']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_description) by extension 'ros'
+[0.452s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rover_description' with type 'ros.ament_cmake' and name 'rover_description'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_motor) by extensions ['ignore', 'ignore_ament_install']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_motor) by extension 'ignore'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_motor) by extension 'ignore_ament_install'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_motor) by extensions ['colcon_pkg']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_motor) by extension 'colcon_pkg'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_motor) by extensions ['colcon_meta']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_motor) by extension 'colcon_meta'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_motor) by extensions ['ros']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rover_motor) by extension 'ros'
+[0.454s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rover_motor' with type 'ros.ament_python' and name 'rover_motor'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore_ament_install'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_pkg']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_pkg'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_meta']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_meta'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ros']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ros'
+[0.456s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sllidar_ros2' with type 'ros.ament_cmake' and name 'sllidar_ros2'
+[0.456s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.456s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.456s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.456s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.456s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.503s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.503s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.510s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/mohanarangan-t-r/teleop_ws/install
+[0.511s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/mohanarangan-t-r/rover_ws/install
+[0.517s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 426 installed packages in /opt/ros/jazzy
+[0.520s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.634s] Level 5:colcon.colcon_core.verb:set package 'rover_bringup' build argument 'cmake_args' from command line to 'None'
+[0.635s] Level 5:colcon.colcon_core.verb:set package 'rover_bringup' build argument 'cmake_target' from command line to 'None'
+[0.635s] Level 5:colcon.colcon_core.verb:set package 'rover_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.635s] Level 5:colcon.colcon_core.verb:set package 'rover_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.635s] Level 5:colcon.colcon_core.verb:set package 'rover_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.635s] Level 5:colcon.colcon_core.verb:set package 'rover_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.635s] Level 5:colcon.colcon_core.verb:set package 'rover_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.635s] Level 5:colcon.colcon_core.verb:set package 'rover_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.635s] Level 5:colcon.colcon_core.verb:set package 'rover_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.635s] DEBUG:colcon.colcon_core.verb:Building package 'rover_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mohanarangan-t-r/teleop_ws/build/rover_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup', 'merge_install': False, 'path': '/home/mohanarangan-t-r/teleop_ws/src/rover_bringup', 'symlink_install': True, 'test_result_base': None}
+[0.635s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_args' from command line to 'None'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_target' from command line to 'None'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.636s] DEBUG:colcon.colcon_core.verb:Building package 'rover_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mohanarangan-t-r/teleop_ws/build/rover_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mohanarangan-t-r/teleop_ws/install/rover_description', 'merge_install': False, 'path': '/home/mohanarangan-t-r/teleop_ws/src/rover_description', 'symlink_install': True, 'test_result_base': None}
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_motor' build argument 'cmake_args' from command line to 'None'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_motor' build argument 'cmake_target' from command line to 'None'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_motor' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_motor' build argument 'cmake_clean_cache' from command line to 'False'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_motor' build argument 'cmake_clean_first' from command line to 'False'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_motor' build argument 'cmake_force_configure' from command line to 'False'
+[0.636s] Level 5:colcon.colcon_core.verb:set package 'rover_motor' build argument 'ament_cmake_args' from command line to 'None'
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'rover_motor' build argument 'catkin_cmake_args' from command line to 'None'
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'rover_motor' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.637s] DEBUG:colcon.colcon_core.verb:Building package 'rover_motor' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mohanarangan-t-r/teleop_ws/build/rover_motor', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mohanarangan-t-r/teleop_ws/install/rover_motor', 'merge_install': False, 'path': '/home/mohanarangan-t-r/teleop_ws/src/rover_motor', 'symlink_install': True, 'test_result_base': None}
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_args' from command line to 'None'
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target' from command line to 'None'
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_first' from command line to 'False'
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_force_configure' from command line to 'False'
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'ament_cmake_args' from command line to 'None'
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.637s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.637s] DEBUG:colcon.colcon_core.verb:Building package 'sllidar_ros2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2', 'merge_install': False, 'path': '/home/mohanarangan-t-r/teleop_ws/src/sllidar_ros2', 'symlink_install': True, 'test_result_base': None}
+[0.637s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.639s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.640s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/mohanarangan-t-r/teleop_ws/src/rover_bringup' with build type 'ament_python'
+[0.640s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_bringup', 'ament_prefix_path')
+[0.648s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.648s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/hook/ament_prefix_path.ps1'
+[0.650s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/hook/ament_prefix_path.dsv'
+[0.651s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/hook/ament_prefix_path.sh'
+[0.652s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.652s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.660s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mohanarangan-t-r/teleop_ws/src/rover_description' with build type 'ament_cmake'
+[0.661s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mohanarangan-t-r/teleop_ws/src/rover_description'
+[0.661s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.661s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.672s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/mohanarangan-t-r/teleop_ws/src/rover_motor' with build type 'ament_python'
+[0.672s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_motor', 'ament_prefix_path')
+[0.672s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/hook/ament_prefix_path.ps1'
+[0.673s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/hook/ament_prefix_path.dsv'
+[0.674s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/hook/ament_prefix_path.sh'
+[0.676s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.676s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.686s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mohanarangan-t-r/teleop_ws/src/sllidar_ros2' with build type 'ament_cmake'
+[0.686s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mohanarangan-t-r/teleop_ws/src/sllidar_ros2'
+[0.686s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.686s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.149s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/mohanarangan-t-r/teleop_ws/src/rover_bringup'
+[1.150s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.150s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.167s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_motor:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mohanarangan-t-r/teleop_ws/build/rover_description -- -j16 -l16
+[1.619s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/mohanarangan-t-r/teleop_ws/src/rover_motor'
+[1.620s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.620s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.642s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_motor:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2 -- -j16 -l16
+[1.647s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_motor:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mohanarangan-t-r/teleop_ws/build/rover_description -- -j16 -l16
+[1.674s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_motor:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mohanarangan-t-r/teleop_ws/build/rover_description
+[1.736s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rover_description)
+[1.738s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_motor:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mohanarangan-t-r/teleop_ws/build/rover_description
+[1.746s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description' for CMake module files
+[1.748s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description' for CMake config files
+[1.749s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_description', 'cmake_prefix_path')
+[1.750s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/hook/cmake_prefix_path.ps1'
+[1.751s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/hook/cmake_prefix_path.dsv'
+[1.752s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/hook/cmake_prefix_path.sh'
+[1.753s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description/bin'
+[1.753s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description/lib/pkgconfig/rover_description.pc'
+[1.754s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description/lib/python3.12/site-packages'
+[1.754s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description/bin'
+[1.755s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.ps1'
+[1.757s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.dsv'
+[1.758s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.sh'
+[1.759s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.bash'
+[1.761s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.zsh'
+[1.763s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/colcon-core/packages/rover_description)
+[1.764s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rover_description)
+[1.764s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description' for CMake module files
+[1.765s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description' for CMake config files
+[1.766s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_description', 'cmake_prefix_path')
+[1.766s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/hook/cmake_prefix_path.ps1'
+[1.767s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/hook/cmake_prefix_path.dsv'
+[1.768s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/hook/cmake_prefix_path.sh'
+[1.769s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description/bin'
+[1.769s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description/lib/pkgconfig/rover_description.pc'
+[1.770s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description/lib/python3.12/site-packages'
+[1.770s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_description/bin'
+[1.771s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.ps1'
+[1.773s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.dsv'
+[1.774s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.sh'
+[1.775s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.bash'
+[1.775s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.zsh'
+[1.776s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohanarangan-t-r/teleop_ws/install/rover_description/share/colcon-core/packages/rover_description)
+[1.880s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_motor:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2 -- -j16 -l16
+[1.884s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_motor:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2
+[1.951s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[1.952s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2' for CMake module files
+[1.953s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_motor:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2
+[1.954s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2' for CMake config files
+[1.955s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[1.955s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[1.956s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[1.957s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[1.958s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/lib'
+[1.958s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/bin'
+[1.959s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[1.959s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/lib/python3.12/site-packages'
+[1.960s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/bin'
+[1.960s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[1.961s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[1.962s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[1.963s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[1.963s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[1.964s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[1.965s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[1.965s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2' for CMake module files
+[1.966s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2' for CMake config files
+[1.967s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[1.967s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[1.968s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[1.969s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[1.970s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/lib'
+[1.970s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/bin'
+[1.970s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[1.970s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/lib/python3.12/site-packages'
+[1.971s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/bin'
+[1.971s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[1.972s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[1.973s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[1.974s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[1.975s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[1.975s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[3.010s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/rover_motor': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mohanarangan-t-r/teleop_ws/build/rover_motor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mohanarangan-t-r/teleop_ws/build/rover_motor/build --no-deps symlink_data
+[3.021s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/rover_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mohanarangan-t-r/teleop_ws/build/rover_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mohanarangan-t-r/teleop_ws/build/rover_bringup/build --no-deps symlink_data
+[4.318s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_motor', 'pythonpath_develop')
+[4.318s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/rover_motor' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mohanarangan-t-r/teleop_ws/build/rover_motor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mohanarangan-t-r/teleop_ws/build/rover_motor/build --no-deps symlink_data
+[4.319s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/build/rover_motor/share/rover_motor/hook/pythonpath_develop.ps1'
+[4.320s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohanarangan-t-r/teleop_ws/build/rover_motor/share/rover_motor/hook/pythonpath_develop.dsv'
+[4.321s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/build/rover_motor/share/rover_motor/hook/pythonpath_develop.sh'
+[4.322s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_motor' for CMake module files
+[4.323s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_motor' for CMake config files
+[4.324s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib'
+[4.324s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/bin'
+[4.324s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib/pkgconfig/rover_motor.pc'
+[4.325s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib/python3.12/site-packages'
+[4.325s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_motor', 'pythonpath')
+[4.325s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/hook/pythonpath.ps1'
+[4.326s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/hook/pythonpath.dsv'
+[4.326s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/hook/pythonpath.sh'
+[4.328s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/bin'
+[4.328s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rover_motor)
+[4.328s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/package.ps1'
+[4.329s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/package.dsv'
+[4.330s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/package.sh'
+[4.331s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/package.bash'
+[4.332s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor/package.zsh'
+[4.332s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/colcon-core/packages/rover_motor)
+[4.334s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_bringup', 'pythonpath_develop')
+[4.335s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/build/rover_bringup/share/rover_bringup/hook/pythonpath_develop.ps1'
+[4.335s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/rover_bringup' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mohanarangan-t-r/teleop_ws/build/rover_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mohanarangan-t-r/teleop_ws/build/rover_bringup/build --no-deps symlink_data
+[4.336s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohanarangan-t-r/teleop_ws/build/rover_bringup/share/rover_bringup/hook/pythonpath_develop.dsv'
+[4.336s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/build/rover_bringup/share/rover_bringup/hook/pythonpath_develop.sh'
+[4.337s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup' for CMake module files
+[4.338s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup' for CMake config files
+[4.339s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/lib'
+[4.339s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/bin'
+[4.339s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/lib/pkgconfig/rover_bringup.pc'
+[4.340s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/lib/python3.12/site-packages'
+[4.340s] Level 1:colcon.colcon_core.shell:create_environment_hook('rover_bringup', 'pythonpath')
+[4.340s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/hook/pythonpath.ps1'
+[4.341s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/hook/pythonpath.dsv'
+[4.342s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/hook/pythonpath.sh'
+[4.343s] Level 1:colcon.colcon_core.environment:checking '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/bin'
+[4.343s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rover_bringup)
+[4.344s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/package.ps1'
+[4.345s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/package.dsv'
+[4.346s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/package.sh'
+[4.347s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/package.bash'
+[4.347s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/rover_bringup/package.zsh'
+[4.348s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohanarangan-t-r/teleop_ws/install/rover_bringup/share/colcon-core/packages/rover_bringup)
+[4.348s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[4.349s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[4.349s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[4.349s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[4.378s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[4.378s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[4.378s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.402s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.403s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mohanarangan-t-r/teleop_ws/install/local_setup.ps1'
+[4.404s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mohanarangan-t-r/teleop_ws/install/_local_setup_util_ps1.py'
+[4.407s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mohanarangan-t-r/teleop_ws/install/setup.ps1'
+[4.410s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mohanarangan-t-r/teleop_ws/install/local_setup.sh'
+[4.411s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mohanarangan-t-r/teleop_ws/install/_local_setup_util_sh.py'
+[4.412s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mohanarangan-t-r/teleop_ws/install/setup.sh'
+[4.415s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mohanarangan-t-r/teleop_ws/install/local_setup.bash'
+[4.416s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mohanarangan-t-r/teleop_ws/install/setup.bash'
+[4.419s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mohanarangan-t-r/teleop_ws/install/local_setup.zsh'
+[4.420s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mohanarangan-t-r/teleop_ws/install/setup.zsh'

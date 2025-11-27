@@ -1,0 +1,59 @@
+[0.325s] Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mohanarangan-t-r/teleop_ws/src/rover_description -DCMAKE_INSTALL_PREFIX=/home/mohanarangan-t-r/teleop_ws/install/rover_description
+[0.572s] -- The C compiler identification is GNU 13.3.0
+[0.593s] -- The CXX compiler identification is GNU 13.3.0
+[0.621s] -- Detecting C compiler ABI info
+[0.744s] -- Detecting C compiler ABI info - done
+[0.752s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.752s] -- Detecting C compile features
+[0.753s] -- Detecting C compile features - done
+[0.766s] -- Detecting CXX compiler ABI info
+[0.877s] -- Detecting CXX compiler ABI info - done
+[0.884s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.884s] -- Detecting CXX compile features
+[0.885s] -- Detecting CXX compile features - done
+[0.911s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.069s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.201s] -- Found urdf: 2.10.0 (/opt/ros/jazzy/share/urdf/cmake)
+[1.266s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.283s] -- Found xacro: 2.1.1 (/opt/ros/jazzy/share/xacro/cmake)
+[1.286s] -- Found robot_state_publisher: 3.3.3 (/opt/ros/jazzy/share/robot_state_publisher/cmake)
+[1.323s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.338s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.355s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.368s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.463s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.467s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.495s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.557s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.559s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.574s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.576s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.582s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.595s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.855s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.017s] -- Added test 'lint_cmake' to check CMake code style
+[2.020s] -- Added test 'xmllint' to check XML markup files
+[2.026s] -- Configuring done (1.7s)
+[2.036s] -- Generating done (0.0s)
+[2.040s] -- Build files have been written to: /home/mohanarangan-t-r/teleop_ws/build/rover_description
+[2.059s] Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mohanarangan-t-r/teleop_ws/src/rover_description -DCMAKE_INSTALL_PREFIX=/home/mohanarangan-t-r/teleop_ws/install/rover_description
+[2.060s] Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mohanarangan-t-r/teleop_ws/build/rover_description -- -j16 -l16
+[2.127s] Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mohanarangan-t-r/teleop_ws/build/rover_description -- -j16 -l16
+[2.145s] Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mohanarangan-t-r/teleop_ws/build/rover_description
+[2.159s] -- Install configuration: ""
+[2.159s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/ament_index/resource_index/package_run_dependencies/rover_description
+[2.159s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/ament_index/resource_index/parent_prefix_path/rover_description
+[2.159s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/environment/ament_prefix_path.sh
+[2.160s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/environment/ament_prefix_path.dsv
+[2.160s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/environment/path.sh
+[2.161s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/environment/path.dsv
+[2.161s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/local_setup.bash
+[2.161s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/local_setup.sh
+[2.162s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/local_setup.zsh
+[2.162s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/local_setup.dsv
+[2.162s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.dsv
+[2.163s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/ament_index/resource_index/packages/rover_description
+[2.163s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/cmake/rover_descriptionConfig.cmake
+[2.164s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/cmake/rover_descriptionConfig-version.cmake
+[2.164s] -- Installing: /home/mohanarangan-t-r/teleop_ws/install/rover_description/share/rover_description/package.xml
+[2.170s] Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mohanarangan-t-r/teleop_ws/build/rover_description

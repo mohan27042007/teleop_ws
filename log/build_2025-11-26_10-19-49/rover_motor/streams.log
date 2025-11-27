@@ -1,0 +1,24 @@
+[0.709s] Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/rover_motor': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/mohanarangan-t-r/teleop_ws/build/rover_motor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mohanarangan-t-r/teleop_ws/build/rover_motor/build --no-deps symlink_data
+[0.916s] running develop
+[1.041s] running egg_info
+[1.041s] creating rover_motor.egg-info
+[1.053s] writing rover_motor.egg-info/PKG-INFO
+[1.053s] writing dependency_links to rover_motor.egg-info/dependency_links.txt
+[1.053s] writing entry points to rover_motor.egg-info/entry_points.txt
+[1.053s] writing requirements to rover_motor.egg-info/requires.txt
+[1.054s] writing top-level names to rover_motor.egg-info/top_level.txt
+[1.054s] writing manifest file 'rover_motor.egg-info/SOURCES.txt'
+[1.077s] reading manifest file 'rover_motor.egg-info/SOURCES.txt'
+[1.077s] writing manifest file 'rover_motor.egg-info/SOURCES.txt'
+[1.090s] running build_ext
+[1.090s] Creating /home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib/python3.12/site-packages/rover-motor.egg-link (link to .)
+[1.090s] Installing motor_node script to /home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib/rover_motor
+[1.090s] 
+[1.091s] Installed /home/mohanarangan-t-r/teleop_ws/build/rover_motor
+[1.091s] running symlink_data
+[1.091s] creating /home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/ament_index
+[1.092s] creating /home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/ament_index/resource_index
+[1.093s] creating /home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/ament_index/resource_index/packages
+[1.093s] symbolically linking /home/mohanarangan-t-r/teleop_ws/build/rover_motor/resource/rover_motor -> /home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/ament_index/resource_index/packages
+[1.093s] symbolically linking /home/mohanarangan-t-r/teleop_ws/build/rover_motor/package.xml -> /home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor
+[1.122s] Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/rover_motor' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/mohanarangan-t-r/teleop_ws/build/rover_motor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mohanarangan-t-r/teleop_ws/build/rover_motor/build --no-deps symlink_data

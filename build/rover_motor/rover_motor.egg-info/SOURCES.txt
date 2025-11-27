@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+resource/rover_motor
+rover_motor/__init__.py
+rover_motor/motor_node.py
+rover_motor.egg-info/PKG-INFO
+rover_motor.egg-info/SOURCES.txt
+rover_motor.egg-info/dependency_links.txt
+rover_motor.egg-info/entry_points.txt
+rover_motor.egg-info/requires.txt
+rover_motor.egg-info/top_level.txt
+rover_motor.egg-info/zip-safe

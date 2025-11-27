@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating rover_motor.egg-info
+writing rover_motor.egg-info/PKG-INFO
+writing dependency_links to rover_motor.egg-info/dependency_links.txt
+writing entry points to rover_motor.egg-info/entry_points.txt
+writing requirements to rover_motor.egg-info/requires.txt
+writing top-level names to rover_motor.egg-info/top_level.txt
+writing manifest file 'rover_motor.egg-info/SOURCES.txt'
+reading manifest file 'rover_motor.egg-info/SOURCES.txt'
+writing manifest file 'rover_motor.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib/python3.12/site-packages/rover-motor.egg-link (link to .)
+Installing motor_node script to /home/mohanarangan-t-r/teleop_ws/install/rover_motor/lib/rover_motor
+
+Installed /home/mohanarangan-t-r/teleop_ws/build/rover_motor
+running symlink_data
+creating /home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/ament_index
+creating /home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/ament_index/resource_index
+creating /home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/ament_index/resource_index/packages
+symbolically linking /home/mohanarangan-t-r/teleop_ws/build/rover_motor/resource/rover_motor -> /home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/ament_index/resource_index/packages
+symbolically linking /home/mohanarangan-t-r/teleop_ws/build/rover_motor/package.xml -> /home/mohanarangan-t-r/teleop_ws/install/rover_motor/share/rover_motor

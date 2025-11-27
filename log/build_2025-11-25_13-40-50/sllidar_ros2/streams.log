@@ -1,0 +1,30 @@
+[0.931s] Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2 -- -j16 -l16
+[1.096s] [ 10%] Built target sllidar_client
+[1.110s] [100%] Built target sllidar_node
+[1.142s] Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2 -- -j16 -l16
+[1.144s] Invoking command in '/home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2
+[1.165s] -- Install configuration: ""
+[1.166s] -- Execute custom install script
+[1.167s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a1_launch.py
+[1.167s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a1_launch.py
+[1.167s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/rviz/sllidar_ros2.rviz
+[1.168s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_node
+[1.168s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_client
+[1.168s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/ament_index/resource_index/package_run_dependencies/sllidar_ros2
+[1.168s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/ament_index/resource_index/parent_prefix_path/sllidar_ros2
+[1.169s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.sh
+[1.169s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.dsv
+[1.169s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.sh
+[1.169s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.dsv
+[1.170s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.bash
+[1.170s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.sh
+[1.170s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.zsh
+[1.170s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.dsv
+[1.171s] -- Symlinking: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv
+[1.191s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/ament_index/resource_index/packages/sllidar_ros2
+[1.192s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.192s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.192s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config.cmake
+[1.192s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config-version.cmake
+[1.192s] -- Up-to-date symlink: /home/mohanarangan-t-r/teleop_ws/install/sllidar_ros2/share/sllidar_ros2/package.xml
+[1.196s] Invoked command in '/home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohanarangan-t-r/teleop_ws/install/rover_teleop:/home/mohanarangan-t-r/teleop_ws/install/rover_bringup:/home/mohanarangan-t-r/rover_ws/install/rover_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mohanarangan-t-r/teleop_ws/build/sllidar_ros2

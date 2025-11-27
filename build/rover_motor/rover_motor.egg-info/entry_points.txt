@@ -1,0 +1,2 @@
+[console_scripts]
+motor_node = rover_motor.motor_node:main
