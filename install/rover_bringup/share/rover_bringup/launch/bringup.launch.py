@@ -1,1 +1,0 @@
-/home/mohanarangan-t-r/teleop_ws/build/rover_bringup/launch/bringup.launch.py

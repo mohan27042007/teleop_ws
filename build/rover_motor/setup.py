@@ -1,1 +1,0 @@
-/home/mohanarangan-t-r/teleop_ws/src/rover_motor/setup.py

@@ -1,0 +1,29 @@
+# ROS2 workspace ignores
+build/
+install/
+log/
+
+# Python stuff
+__pycache__/
+*.pyc
+
+# VSCode
+.vscode/
+
+# CLion / JetBrains
+.idea/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+
+# Launch logs
+*.log
+
+# Meshes backups
+*.STL~
+*.DAE~
+
+# Temporary files
+*~
+*.swp
