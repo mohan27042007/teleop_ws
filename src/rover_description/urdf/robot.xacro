@@ -13,7 +13,7 @@
 
   <!-- Slight outside offset so wheels stick out correctly -->
   <xacro:property name="wheel_y_offset" value="${W/2 + wheel_w/2 + 0.02}"/>  
-  <xacro:property name="wheel_x_front" value="${L/2 + 0.04}"/>
+  <xacro:property name="wheel_x_front" value="${L/2 + 0.03}"/>
   <xacro:property name="wheel_x_back"  value="-${L/2 + 0.02}"/>
 
   <!-- ========================= -->
