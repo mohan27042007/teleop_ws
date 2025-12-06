@@ -10,7 +10,7 @@ def generate_launch_description():
             name='usb_cam',
             namespace='camera',
             parameters=[
-                {'video_device': '/dev/video2'},
+                {'video_device': '/dev/video0'},
                 {'image_size': [640, 480]},
                 {'pixel_format': 'YUYV'},
                 {'output_encoding': 'rgb8'},

@@ -55,5 +55,13 @@ def generate_launch_description():
         description_launch,
         lidar_launch,
         camera_launch,
-        rviz_launch
+        rviz_launch,
+
+        Node(
+            package='rover_motor',
+            executable='motor_node',
+            name='motor_node',
+            output='screen'
+        ),
+
     ])
