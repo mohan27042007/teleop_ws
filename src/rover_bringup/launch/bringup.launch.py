@@ -58,9 +58,24 @@ def generate_launch_description():
         rviz_launch,
 
         Node(
-            package='rover_motor',
-            executable='motor_node',
-            name='motor_node',
+            package='wifi_bridge',
+            executable='wifi_bridge_node',
+            name='wifi_bridge_node',
+            output='screen'
+        ),
+
+        Node(
+            package='robot_localization',
+            executable='ekf_node',
+            name='ekf_filter_node',
+            output='screen',
+            parameters=[os.path.join(pkg_bringup, 'config', 'ekf.yaml')],
+        ),
+
+        Node(
+            package='arm_serial_bridge',
+            executable='arm_serial_bridge',
+            name='arm_serial_bridge',
             output='screen'
         ),
 

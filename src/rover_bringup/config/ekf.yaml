@@ -1,0 +1,57 @@
+### ekf_config.yaml ###
+frequency: 30
+sensor_timeout: 0.1
+two_d_mode: true
+transform_time_offset: 0.0
+transform_timeout: 0.0
+print_diagnostics: true
+debug: false
+debug_out_file: /tmp/debug_ekf.txt
+publish_tf: true
+publish_acceleration: false
+
+map_frame: map
+odom_frame: odom
+base_link_frame: base_link
+world_frame: odom
+
+# -------------------------------------
+# Wheel Odometry (from wifi_bridge)
+# -------------------------------------
+odom0: /odom
+# Config: [x, y, z, 
+#          roll, pitch, yaw, 
+#          vx, vy, vz, 
+#          vroll, vpitch, vyaw, 
+#          ax, ay, az]
+odom0_config: [true,  true,  false,
+               false, false, false,
+               false, false, false,
+               false, false, false,
+               false, false, false]
+# Note: We only fuse X, Y position from wheel odom. 
+# We trust the IMU for heading (yaw) velocity more than differential drive yaw.
+
+odom0_differential: false
+odom0_relative: false
+odom0_queue_size: 10
+
+# -------------------------------------
+# IMU (MPU6050 - No Magnetometer)
+# -------------------------------------
+imu0: /imu/data
+# Config: [x, y, z, 
+#          roll, pitch, yaw, 
+#          vx, vy, vz, 
+#          vroll, vpitch, vyaw, 
+#          ax, ay, az]
+imu0_config: [false, false, false,
+              true,  true,  false,  # Fuse Roll/Pitch (gravity), IGNORE Yaw (no compass)
+              false, false, false,
+              false, false, true,   # Fuse Angular Velocity (Vyaw) from Gyro
+              true,  false, false]  # Fuse Linear Accel (optional, can help with starts/stops)
+
+imu0_differential: false
+imu0_relative: true  # Zero out the IMU at startup
+imu0_queue_size: 10
+imu0_remove_gravitational_acceleration: true

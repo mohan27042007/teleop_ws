@@ -77,6 +77,39 @@
   </joint>
 
   <!-- ========================= -->
+  <!-- IMU LINK -->
+  <!-- ========================= -->
+  <link name="imu_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.05 0.04"/>
+      </geometry>
+      <material name="black"><color rgba="0.0 0.0 0.0 1"/></material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.05 0.04"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.2"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.0005" ixy="0.0" ixz="0.0" iyy="0.0005" iyz="0.0" izz="0.0005"/>
+    </inertial>
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.13 0.01 0.24" rpy="0 0 0"/>
+  </joint>
+  
+
+  <!-- ========================= -->
   <!-- WHEEL MACRO -->
   <!-- ========================= -->
   <xacro:macro name="wheel" params="wheel_name x y mesh_stl mesh_rpy joint_axis">
@@ -228,6 +261,7 @@
                     mesh_stl="package://rover_description/meshes/wheel1.STL"
                     mesh_rpy="-1.57 0 0"
                     joint_axis="0 0 1"/>
+    
   
   <!-- ========================= -->
   <!-- GAZEBO PLUGINS (Inline for Harmonic) -->
