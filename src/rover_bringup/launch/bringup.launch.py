@@ -79,4 +79,11 @@ def generate_launch_description():
             output='screen'
         ),
 
+        Node(
+            package='imu_bridge',
+            executable='imu_bridge',
+            name='imu_bridge',
+            output='screen'
+        ),
+
     ])
