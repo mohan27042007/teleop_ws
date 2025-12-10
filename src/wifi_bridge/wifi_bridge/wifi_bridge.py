@@ -9,7 +9,7 @@ import math
 import time
 
 # --- CONFIG: set your ESP32 IP/PORT here ---
-ESP32_IP = "10.32.13.63"   # <<< REPLACE with your ESP32 IP if different >>>
+ESP32_IP = "10.233.1.63"   # <<< REPLACE with your ESP32 IP if different >>>
 ESP32_PORT = 8888
 
 def euler_to_quaternion(roll, pitch, yaw):
