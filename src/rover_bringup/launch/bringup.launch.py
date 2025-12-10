@@ -58,32 +58,11 @@ def generate_launch_description():
         rviz_launch,
 
         Node(
-            package='wifi_bridge',
-            executable='wifi_bridge_node',
-            name='wifi_bridge_node',
-            output='screen'
-        ),
-
-        Node(
             package='robot_localization',
             executable='ekf_node',
             name='ekf_filter_node',
             output='screen',
             parameters=[os.path.join(pkg_bringup, 'config', 'ekf.yaml')],
-        ),
-
-        Node(
-            package='arm_serial_bridge',
-            executable='arm_serial_bridge',
-            name='arm_serial_bridge',
-            output='screen'
-        ),
-
-        Node(
-            package='imu_bridge',
-            executable='imu_bridge',
-            name='imu_bridge',
-            output='screen'
-        ),
+        ),     
 
     ])

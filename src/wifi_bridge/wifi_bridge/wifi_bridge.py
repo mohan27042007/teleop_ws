@@ -35,7 +35,7 @@ class WifiBridge(Node):
         # Parameters
         self.declare_parameter('wheel_base', 0.31348)
         self.declare_parameter('wheel_radius', 0.05)
-        self.declare_parameter('ticks_per_rev', 1000.0)
+        self.declare_parameter('ticks_per_rev', 2786.0)
 
         self.wheel_base = self.get_parameter('wheel_base').value
         self.wheel_radius = self.get_parameter('wheel_radius').value
