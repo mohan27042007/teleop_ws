@@ -110,13 +110,14 @@ class WifiBridge(Node):
             self.update_odometry(int(l), int(r))
             return
 
-        # ---- IMU Packet ----
+        # ---- IMU PACKET ----
         if msg.startswith("I:"):
             parts = msg.split(":")
-            if len(parts) != 10:
+            if len(parts) != 11:
                 return
 
-            _, qw, qx, qy, qz, ax, ay, az, gz = parts
+            # unpack correctly
+            _, ax, ay, az, gx, gy, gz, qw, qx, qy, qz = parts
 
             self.publish_imu(
                 float(qw), float(qx), float(qy), float(qz),
@@ -124,6 +125,7 @@ class WifiBridge(Node):
                 float(gz)
             )
             return
+
 
     # ----------------------------------------
     # IMU PUBLISHER
