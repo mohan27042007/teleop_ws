@@ -1,61 +1,46 @@
 ekf_filter_node:
   ros__parameters:
 
-    ### Core settings ###
     frequency: 30.0
     sensor_timeout: 0.1
     two_d_mode: true
-    transform_time_offset: 0.0
-    transform_timeout: 0.0
     print_diagnostics: true
-    debug: false
-    debug_out_file: /tmp/debug_ekf.txt
     publish_tf: true
     publish_acceleration: false
 
-    ### Frame definitions ###
     map_frame: map
     odom_frame: odom
     base_link_frame: base_link
     world_frame: odom
 
-    ### -------------------------------------
-    ### Wheel Odometry (from wifi_bridge)
-    ### -------------------------------------
+    # ------------------------------
+    # Wheel Odometry
+    # ------------------------------
     odom0: /odom
-
-    # Config array:
-    # [x, y, z,
-    #  roll, pitch, yaw,
-    #  vx, vy, vz,
-    #  vroll, vpitch, vyaw,
-    #  ax, ay, az]
     odom0_config: [
-      true,  true,  false,
-      false, false, false,
-      false, false, false,
-      false, false, false,
-      false, false, false
+      true, true, false,   # x, y, z
+      false, false, false, # roll pitch yaw
+      false, false, false, # vx vy vz
+      false, false, false, # vroll vpitch vyaw
+      false, false, false  # ax ay az
     ]
-
     odom0_differential: false
     odom0_relative: false
     odom0_queue_size: 10
 
-    ### -------------------------------------
-    ### IMU (your MPU6050 via imu_bridge)
-    ### -------------------------------------
+    # ------------------------------
+    # IMU (REAL IMU from ESP32)
+    # ------------------------------
     imu0: /imu/data
-
-    imu0_config: [
-      false, false, false,     # no x/y/z position
-      true,  true,  false,     # roll + pitch fused, yaw ignored (no magnetometer)
-      false, false, false,     # no linear velocity
-      false, false, true,      # fuse gyro Z (yaw rate)
-      true,  false, false      # fuse accel X, ignore Y,Z
-    ]
-
-    imu0_differential: false
     imu0_relative: true
+    imu0_differential: false
     imu0_queue_size: 10
     imu0_remove_gravitational_acceleration: true
+
+    imu0_config: [
+      false, false, false,    # position
+      true, true, true,       # roll, pitch, yaw (from quaternion)
+      false, false, false,    # linear velocity
+      false, false, true,     # gyro z
+      true, true, true        # accel x,y,z
+    ]
