@@ -75,8 +75,8 @@ class WifiBridge(Node):
         linear = msg.linear.x
         angular = msg.angular.z
 
-        left = int((linear - angular) * 200)
-        right = int((linear + angular) * 200)
+        left = int((linear - angular) * 255)
+        right = int((linear + angular) * 255)
 
         command = f"M{left}_{right}"
         self.sock.sendto(command.encode(), (ESP32_IP, ESP32_PORT))
