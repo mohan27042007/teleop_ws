@@ -7,6 +7,13 @@
   <maintainer email="mail4mohan27@gmail.com">mohanarangan-t-r</maintainer>
   <license>TODO: License declaration</license>
 
+
+  <exec_depend>slam_toolbox</exec_depend>
+
+  <exec_depend>ros2launch</exec_depend>
+
+  <exec_depend>rviz2</exec_depend>
+
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
