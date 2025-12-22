@@ -10,11 +10,20 @@ def generate_launch_description():
             name='usb_cam',
             namespace='camera',
             parameters=[
-                {'video_device': '/dev/video0'},
+                # Correct USB camera
+                {'video_device': '/dev/video2'},
+
+                # Lock resolution
                 {'image_size': [640, 480]},
-                {'pixel_format': 'YUYV'},
+
+                # Use MJPG (hardware compressed)
+                {'pixel_format': 'MJPG'},
+
+                # Output for ROS / CV
                 {'output_encoding': 'rgb8'},
-                {'frame_rate': 30.0},
+
+                # Reduce FPS for stability
+                {'frame_rate': 15.0},
             ],
             output='screen'
         )

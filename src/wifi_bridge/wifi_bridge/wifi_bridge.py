@@ -10,7 +10,7 @@ from sensor_msgs.msg import Imu
 from std_msgs.msg import String
 
 
-ESP32_IP = "192.168.1.101"
+ESP32_IP = "192.168.1.50"
 ESP32_PORT = 8888
 
 
@@ -42,7 +42,6 @@ class WifiBridge(Node):
         # ---- UDP socket ----
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock.setblocking(False)
-        self.sock.bind(("0.0.0.0", ESP32_PORT))
 
         # ---- ROS publishers ----
         self.odom_pub = self.create_publisher(Odometry, "/odom", 10)
@@ -75,8 +74,13 @@ class WifiBridge(Node):
         linear = msg.linear.x
         angular = msg.angular.z
 
-        left = int((linear - angular) * 255)
-        right = int((linear + angular) * 255)
+        MAX_PWM = 255
+
+        left  = int((linear - angular * self.wheel_base / 2.0) * MAX_PWM)
+        right = int((linear + angular * self.wheel_base / 2.0) * MAX_PWM)
+
+        left  = max(-255, min(255, left))
+        right = max(-255, min(255, right))
 
         command = f"M{left}_{right}"
         self.sock.sendto(command.encode(), (ESP32_IP, ESP32_PORT))
