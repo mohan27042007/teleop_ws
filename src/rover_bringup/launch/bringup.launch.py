@@ -34,13 +34,6 @@ def generate_launch_description():
         )
     )
 
-    # -------- Camera Launch --------
-    camera_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(pkg_bringup, 'launch', 'camera.launch.py')
-        )
-    )
-
     # -------- Optional RViz --------
     rviz_launch = Node(
         condition=IfCondition(LaunchConfiguration('use_rviz')),
@@ -54,7 +47,6 @@ def generate_launch_description():
         use_rviz,
         description_launch,
         lidar_launch,
-        camera_launch,
         rviz_launch,
 
         Node(
@@ -64,5 +56,4 @@ def generate_launch_description():
             output='screen',
             parameters=[os.path.join(pkg_bringup, 'config', 'ekf.yaml')],
         ),     
-
     ])
