@@ -53,6 +53,8 @@ class PerceptionGuard(Node):
             now = time.time()
             events = msg.get("events", [])
 
+            self.get_logger().info(f"Received events: {events}")
+
             for event in events:
                 etype = event.get("type", "").upper()
 
