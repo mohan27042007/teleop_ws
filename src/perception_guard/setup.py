@@ -17,11 +17,6 @@ setup(
     maintainer_email='mail4mohan27@gmail.com',
     description='TODO: Package description',
     license='TODO: License declaration',
-    extras_require={
-        'test': [
-            'pytest',
-        ],
-    },
     entry_points={
     'console_scripts': [
         'perception_guard_node = perception_guard.perception_guard_node:main',
