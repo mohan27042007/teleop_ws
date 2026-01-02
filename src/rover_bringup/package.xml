@@ -9,6 +9,14 @@
 
   <depend>launch</depend>
   <depend>launch_ros</depend>
+  
+  <exec_depend>rover_description</exec_depend>
+  <exec_depend>sllidar_ros2</exec_depend>
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>wifi_bridge</exec_depend>
+  <exec_depend>twist_mux</exec_depend>
+  <exec_depend>perception_guard</exec_depend>
+  <exec_depend>robot_localization</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

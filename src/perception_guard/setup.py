@@ -18,8 +18,8 @@ setup(
     description='TODO: Package description',
     license='TODO: License declaration',
     entry_points={
-    'console_scripts': [
-        'perception_guard_node = perception_guard.perception_guard_node:main',
-    ],
-},
+        'console_scripts': [
+            'perception_guard_node = perception_guard.perception_guard_node:main',
+    	],
+    },
 )

@@ -10,7 +10,7 @@ from sensor_msgs.msg import Imu
 from std_msgs.msg import String
 
 
-ESP32_IP = "192.168.1.50"
+ESP32_IP = "192.168.0.50"
 ESP32_PORT = 8888
 
 

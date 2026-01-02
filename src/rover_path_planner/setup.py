@@ -25,9 +25,8 @@ setup(
     entry_points={
         'console_scripts': [
           'astar_planner = rover_path_planner.astar_planner:main',
-        'rpp_controller = rover_path_planner.rpp_controller:main',
-        'planner_manager = rover_path_planner.planner_manager:main',        
-
-],
+          'rpp_controller = rover_path_planner.rpp_controller:main',
+          'planner_manager = rover_path_planner.planner_manager:main',        
+        ],
     },
 )

@@ -18,9 +18,19 @@ setup(
             'launch/lidar.launch.py',
             'launch/teleop.launch.py',
             'launch/camera.launch.py',
+            'launch/real_hardware.launch.py',
         ]),
 
-        ('share/' + package_name + '/config', ['config/ekf.yaml']),
+        ('share/' + package_name + '/config', [
+            'config/ekf.yaml',
+            'config/nav2_params_real.yaml',
+            'config/twist_mux.yaml',
+        ]),
+
+        ('share/' + package_name + '/maps', [
+            'maps/blank_map.yaml',
+            'maps/blank_map.pgm',
+        ]),
     ],
     
     install_requires=['setuptools'],
