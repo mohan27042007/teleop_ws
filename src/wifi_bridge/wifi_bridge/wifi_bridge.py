@@ -7,7 +7,6 @@ import socket
 import math
 import time
 from sensor_msgs.msg import Imu
-from std_msgs.msg import String
 
 
 ESP32_IP = "192.168.0.50"
@@ -49,7 +48,6 @@ class WifiBridge(Node):
 
         # ---- ROS subscribers ----
         self.create_subscription(Twist, "/cmd_vel", self.twist_callback, 10)
-        self.create_subscription(String, "/arm_command", self.arm_callback, 10)
 
         # Odometry state variables
         self.x = 0.0
@@ -75,21 +73,28 @@ class WifiBridge(Node):
         angular = msg.angular.z
 
         MAX_PWM = 255
+    
+        # Standard Diff-Drive Kinematics
+        # Left = Linear - (Angular * Width / 2)
+        # Right = Linear + (Angular * Width / 2)
+    
+        # We multiply by MAX_PWM to get the 0-255 range
+        left_vel  = (linear - (angular * self.wheel_base / 2.0))
+        right_vel = (linear + (angular * self.wheel_base / 2.0))
 
-        left  = int((linear - angular * self.wheel_base / 2.0) * MAX_PWM)
-        right = int((linear + angular * self.wheel_base / 2.0) * MAX_PWM)
+        # Convert to PWM integers
+        left_pwm  = int(left_vel * MAX_PWM)
+        right_pwm = int(right_vel * MAX_PWM)
 
-        left  = max(-255, min(255, left))
-        right = max(-255, min(255, right))
+        # Constrain to valid PWM range
+        left_pwm  = max(-255, min(255, left_pwm))
+        right_pwm = max(-255, min(255, right_pwm))
 
-        command = f"M{left}_{right}"
+        # DEBUG: Check if right_pwm is actually being calculated
+        # self.get_logger().info(f"L: {left_pwm} R: {right_pwm}")
+
+        command = f"M{left_pwm}_{right_pwm}"
         self.sock.sendto(command.encode(), (ESP32_IP, ESP32_PORT))
-
-    def arm_callback(self, msg):
-        cmd = msg.data.strip()
-        if cmd and cmd[0] != 'A':
-            cmd = "A" + cmd
-        self.sock.sendto(cmd.encode(), (ESP32_IP, ESP32_PORT))
 
     # ----------------------------------------
     # RECEIVE UDP DATA FROM ESP32
