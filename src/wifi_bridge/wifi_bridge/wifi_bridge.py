@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import Twist, TransformStamped, Quaternion
+from geometry_msgs.msg import Twist, TwistStamped, TransformStamped, Quaternion
 from nav_msgs.msg import Odometry
 from tf2_ros import TransformBroadcaster
 import socket
@@ -46,8 +46,9 @@ class WifiBridge(Node):
         self.odom_pub = self.create_publisher(Odometry, "/odom", 10)
         self.imu_pub = self.create_publisher(Imu, "/imu/data", 10)
 
-        # ---- ROS subscribers ----
-        self.create_subscription(Twist, "/cmd_vel", self.twist_callback, 10)
+        # ---- ROS subscribers (UPDATED FOR JAZZY) ----
+        # Perception Guard sends TwistStamped now!
+        self.create_subscription(TwistStamped, "/cmd_vel", self.twist_callback, 10)
 
         # Odometry state variables
         self.x = 0.0
@@ -69,29 +70,19 @@ class WifiBridge(Node):
     # SEND COMMANDS TO ESP32
     # ----------------------------------------
     def twist_callback(self, msg):
-        linear = msg.linear.x
-        angular = msg.angular.z
-
+        # Now handling TwistStamped!
+        # Access linear/angular via .twist sub-message
+        linear = msg.twist.linear.x
+        angular = msg.twist.angular.z
         MAX_PWM = 255
     
-        # Standard Diff-Drive Kinematics
-        # Left = Linear - (Angular * Width / 2)
-        # Right = Linear + (Angular * Width / 2)
-    
-        # We multiply by MAX_PWM to get the 0-255 range
-        left_vel  = (linear - (angular * self.wheel_base / 2.0))
-        right_vel = (linear + (angular * self.wheel_base / 2.0))
+        # Convert to PWM integers immediately
+        # left = linear - angular; right = linear + angular
+        left_pwm  = int((linear - (angular * self.wheel_base / 2.0)) * MAX_PWM)
+        right_pwm = int((linear + (angular * self.wheel_base / 2.0)) * MAX_PWM)
 
-        # Convert to PWM integers
-        left_pwm  = int(left_vel * MAX_PWM)
-        right_pwm = int(right_vel * MAX_PWM)
-
-        # Constrain to valid PWM range
         left_pwm  = max(-255, min(255, left_pwm))
         right_pwm = max(-255, min(255, right_pwm))
-
-        # DEBUG: Check if right_pwm is actually being calculated
-        # self.get_logger().info(f"L: {left_pwm} R: {right_pwm}")
 
         command = f"M{left_pwm}_{right_pwm}"
         self.sock.sendto(command.encode(), (ESP32_IP, ESP32_PORT))
@@ -213,7 +204,7 @@ class WifiBridge(Node):
         odom = Odometry()
         odom.header.stamp = time_now.to_msg()
         odom.header.frame_id = "odom"
-        odom.child_frame_id = "base_link"
+        odom.child_frame_id = "base_footprint"
 
         odom.pose.pose.position.x = self.x
         odom.pose.pose.position.y = self.y

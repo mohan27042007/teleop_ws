@@ -1,3 +1,35 @@
+<!--I need to make sure a few things : 
+the lidar_link visuals is flipped | pi value present, need to change that
+| The lidar z height is at 0.24, which is not good, need to change it :
+In your current code:
+- clearance is 0.1325 (Ground to bottom of chassis).
+- wheel_r is 0.05.
+- lidar_joint origin is at z="0.24".
+
+This means your LiDAR is positioned 0.24 meters above the base_link origin.
+The Problem: In your base_link visual/collision tags, you have the box offset by ${wheel_r + clearance + H/2}. In ROS, the base_link origin should ideally be on the floor or the center of the axles. Your current setup has the LiDAR floating quite high.
+The Fix: Use a relative property for the Lidar height so that when the chassis moves, the Lidar moves with it.
+
+and the imu:
+You have the IMU at xyz="0.13 0.01 0.24". 
+As we discussed, if the IMU is offset from the center, the EKF has to do complex math to compensate for the "swing" when the robot rotates. 
+The Fix: Move it to 0 0 0 (relative to the chassis) for now.
+
+updated code u can use:
+
+<joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+  </joint>
+  
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.13 0 0.20" rpy="0 0 0"/>
+  </joint>
+-->
+
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="four_wheel_rover">
 
@@ -9,7 +41,7 @@
   <xacro:property name="H" value="0.160"/>     <!-- height -->
   <xacro:property name="wheel_r" value="0.05"/>  <!-- radius -->
   <xacro:property name="wheel_w" value="0.08"/>  <!-- width -->
-  <xacro:property name="clearance" value="0.215"/>  <!-- 215 mm -->
+  <xacro:property name="clearance" value="0.1325"/>  <!-- 215 mm -->
 
   <!-- Slight outside offset so wheels stick out correctly -->
   <xacro:property name="wheel_y_offset" value="${W/2 + wheel_w/2 + 0.02}"/>  
@@ -184,49 +216,51 @@
   </joint>
 
 
-  <!-- Camera link + optical frame -->
-  <link name="camera_link">
-    <visual>
-      <!-- small housing placed on the front of the rover -->
+  <xacro:if value="false">
+    <!-- Camera link + optical frame -->
+    <link name="camera_link">
+      <visual>
+        <!-- small housing placed on the front of the rover -->
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.08 0.05 0.04"/>
+        </geometry>
+        <material name="black"><color rgba="0.0 0.0 0.0 1"/></material>
+      </visual>
+  
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.08 0.05 0.04"/>
+        </geometry>
+      </collision>
+  
+      <inertial>
+        <mass value="0.2"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.0005" ixy="0.0" ixz="0.0" iyy="0.0005" iyz="0.0" izz="0.0005"/>
+      </inertial>
+    </link>
+  
+    <!-- Camera optical frame (use this frame for image topic) -->
+    <link name="camera_optical_frame"/>
+  
+    <!-- Camera mount joint -->
+    <joint name="camera_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="camera_link"/>
+      <!-- placed on front-center at top; facing forward horizontally -->
+      <origin xyz="0.13 0 0.45" rpy="0 0 0"/>
+    </joint>
+  
+    <!-- Optical frame fixed to camera_link (allows correct TF for image viewer/rviz) -->
+    <joint name="camera_to_optical" type="fixed">
+      <parent link="camera_link"/>
+      <child link="camera_optical_frame"/>
+      <!-- keep identity transform; change rpy if you need optical axes rotated -->
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.08 0.05 0.04"/>
-      </geometry>
-      <material name="black"><color rgba="0.0 0.0 0.0 1"/></material>
-    </visual>
-
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.08 0.05 0.04"/>
-      </geometry>
-    </collision>
-
-    <inertial>
-      <mass value="0.2"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.0005" ixy="0.0" ixz="0.0" iyy="0.0005" iyz="0.0" izz="0.0005"/>
-    </inertial>
-  </link>
-
-  <!-- Camera optical frame (use this frame for image topic) -->
-  <link name="camera_optical_frame"/>
-
-  <!-- Camera mount joint -->
-  <joint name="camera_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="camera_link"/>
-    <!-- placed on front-center at top; facing forward horizontally -->
-    <origin xyz="0.13 0 0.45" rpy="0 0 0"/>
-  </joint>
-
-  <!-- Optical frame fixed to camera_link (allows correct TF for image viewer/rviz) -->
-  <joint name="camera_to_optical" type="fixed">
-    <parent link="camera_link"/>
-    <child link="camera_optical_frame"/>
-    <!-- keep identity transform; change rpy if you need optical axes rotated -->
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint>
+    </joint>
+  </xacro:if>
 
 
   <!-- ========================= -->
@@ -338,24 +372,26 @@
     </sensor>
   </gazebo>
 
-  <!-- Camera sensor attached to camera_link -->
-  <gazebo reference="camera_link">
-    <sensor name="camera_sensor" type="camera">
-      <topic>camera/image_raw</topic>
-      <update_rate>30</update_rate>
-      <camera>
-        <horizontal_fov>1.047</horizontal_fov>
-        <image>
-          <width>640</width>
-          <height>480</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.1</near>
-          <far>50.0</far>
-        </clip>
-      </camera>
-    </sensor>
-  </gazebo>
+  <xacro:if value="false">
+    <!-- Camera sensor attached to camera_link -->
+    <gazebo reference="camera_link">
+      <sensor name="camera_sensor" type="camera">
+        <topic>camera/image_raw</topic>
+        <update_rate>30</update_rate>
+        <camera>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>50.0</far>
+          </clip>
+        </camera>
+      </sensor>
+    </gazebo>
+  </xacro:if>
 
 </robot>

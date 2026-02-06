@@ -16,7 +16,15 @@ def generate_launch_description():
     map_file = os.path.join(pkg_rover_bringup, 'maps', 'blank_map.yaml')
     ekf_config = os.path.join(pkg_rover_bringup, 'config', 'ekf.yaml')
 
+    # -------- Arguments --------
+    slam_arg = DeclareLaunchArgument(
+        'slam',
+        default_value='False',
+        description='Whether to run SLAM (True) or Localization (False)'
+    )
+
     return LaunchDescription([
+        slam_arg,
         
         # 1. Start Robot Description (URDF + TF)
         IncludeLaunchDescription(
@@ -85,7 +93,8 @@ def generate_launch_description():
                 'map': map_file,
                 'params_file': nav2_params,
                 'use_sim_time': 'False',
-                'autostart': 'True'
+                'autostart': 'True',
+                'slam': LaunchConfiguration('slam')
             }.items()
         ),
     ])

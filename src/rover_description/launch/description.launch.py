@@ -1,30 +1,32 @@
+# filepath: ~/teleop_ws/src/rover_description/launch/description.launch.py
+import os
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.substitutions import Command
-from ament_index_python.packages import get_package_share_directory
-from launch_ros.parameter_descriptions import ParameterValue
-import os
+import xacro
 
 def generate_launch_description():
-    pkg_share = get_package_share_directory('rover_description')
-    urdf_path = os.path.join(pkg_share, 'urdf', 'robot.xacro')
+    pkg_path = get_package_share_directory('rover_description')
+    xacro_file = os.path.join(pkg_path, 'urdf', 'robot.xacro')
+    
+    # Process xacro file to plain XML
+    robot_description_config = xacro.process_file(xacro_file).toxml()
 
     return LaunchDescription([
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
+            name='robot_state_publisher',
+            output='screen',
             parameters=[{
-                'robot_description': ParameterValue(
-                    Command([
-                        'xacro ',
-                        urdf_path
-                    ]),
-                    value_type=str
-                )
+                'robot_description': robot_description_config,
+                'use_sim_time': False
             }]
         ),
         Node(
             package='joint_state_publisher',
-            executable='joint_state_publisher'
+            executable='joint_state_publisher',
+            name='joint_state_publisher',
+            parameters=[{'use_sim_time': False}]
         )
     ])
