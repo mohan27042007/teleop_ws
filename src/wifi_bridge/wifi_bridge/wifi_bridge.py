@@ -77,9 +77,20 @@ class WifiBridge(Node):
         MAX_PWM = 255
     
         # Convert to PWM integers immediately
-        # left = linear - angular; right = linear + angular
-        left_pwm  = int((linear - (angular * self.wheel_base / 2.0)) * MAX_PWM)
-        right_pwm = int((linear + (angular * self.wheel_base / 2.0)) * MAX_PWM)
+        # Convert to PWM
+        # We add a 'turn_gain' because skid-steer needs more torque to turn than to drive straight.
+        # The kinematic formula (angular * wheelbase / 2) often yields very small PWM values.
+        turn_gain = 4.0 
+        
+        left_val = linear - (angular * self.wheel_base / 2.0 * turn_gain)
+        right_val = linear + (angular * self.wheel_base / 2.0 * turn_gain)
+        
+        left_pwm  = int(left_val * MAX_PWM)
+        right_pwm = int(right_val * MAX_PWM)
+
+        # Basic Deadzone/Friction offset:
+        # If we have a target but it's too small to move, boost it slightly or let it be.
+        # For now, the gain should differ it enough.
 
         left_pwm  = max(-255, min(255, left_pwm))
         right_pwm = max(-255, min(255, right_pwm))

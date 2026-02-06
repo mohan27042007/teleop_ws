@@ -3,6 +3,7 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 def generate_launch_description():
@@ -39,7 +40,7 @@ def generate_launch_description():
                 os.path.join(pkg_sllidar, 'launch', 'sllidar_a1_launch.py')
             ),
             launch_arguments={
-                'serial_port': '/dev/ttyUSB0',
+                'serial_port': '/dev/lidar',  # Updated to use persistent symlink
                 'frame_id': 'lidar_link'  # <--- CRITICAL FIX: Match URDF
             }.items()
         ),

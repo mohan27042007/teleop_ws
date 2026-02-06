@@ -22,7 +22,7 @@ bt_navigator:
     # Uses standard tree
     default_nav_to_pose_bt_xml: "/opt/ros/jazzy/share/nav2_bt_navigator/behavior_trees/navigate_to_pose_w_replanning_and_recovery.xml"
     plugin_lib_names:
-    - nav2_compute_path_to_pose_action_bt_node
+    # - nav2_compute_path_to_pose_action_bt_node   <-- CAUSES "ALREADY REGISTERED" ERROR
     - nav2_compute_path_through_poses_action_bt_node
     - nav2_smooth_path_action_bt_node
     - nav2_follow_path_action_bt_node
@@ -226,6 +226,33 @@ behavior_server:
     max_rotational_vel: 1.0
     min_rotational_vel: 0.4
     rotational_acc_lim: 3.2
+
+collision_monitor:
+  ros__parameters:
+    use_sim_time: False
+    base_frame_id: "base_footprint"
+    odom_frame_id: "odom"
+    cmd_vel_in_topic: "cmd_vel_smoothed"
+    cmd_vel_out_topic: "cmd_vel"
+    transform_tolerance: 0.1
+    source_timeout: 5.0
+    base_shift_correction: True
+    observation_sources: ["scan"]
+    scan:
+      type: "scan"
+      topic: "/scan"
+      enabled: True
+      min_height: 0.0
+      max_height: 2.0
+    polygons: ["FootprintApproach"]
+    FootprintApproach:
+      type: "polygon"
+      points: "[[0.25, 0.2], [0.25, -0.2], [-0.25, -0.2], [-0.25, 0.2]]"
+      action_type: "stop"
+      min_points: 4
+      visualize: True
+      polygon_pub_topic: "footprint_approach" 
+      enabled: True
 
 lifecycle_manager_navigation:
   ros__parameters:
