@@ -39,10 +39,10 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(
                 os.path.join(pkg_sllidar, 'launch', 'sllidar_a1_launch.py')
             ),
-            launch_arguments={
-                'serial_port': '/dev/lidar',  # Updated to use persistent symlink
-                'frame_id': 'lidar_link'  # <--- CRITICAL FIX: Match URDF
-            }.items()
+            launch_arguments=[
+                ('serial_port', '/dev/lidar'),  # Updated to use persistent symlink
+                ('frame_id', 'lidar_link')  # <--- CRITICAL FIX: Match URDF
+            ]
         ),
 
         # 3. Start Wifi Bridge (Talks to ESP32)
