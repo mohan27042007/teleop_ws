@@ -90,12 +90,12 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(
                 os.path.join(pkg_nav2, 'launch', 'bringup_launch.py')
             ),
-            launch_arguments={
-                'map': map_file,
-                'params_file': nav2_params,
-                'use_sim_time': 'False',
-                'autostart': 'True',
-                'slam': LaunchConfiguration('slam')
-            }.items()
+            launch_arguments=[
+                ('map', map_file),
+                ('params_file', nav2_params),
+                ('use_sim_time', 'False'),
+                ('autostart', 'True'),
+                ('slam', LaunchConfiguration('slam'))
+            ]
         ),
     ])

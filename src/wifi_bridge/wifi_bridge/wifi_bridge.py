@@ -17,11 +17,18 @@ ESP32_PORT = 8888
 # Utility: Convert quaternion list to ROS Quaternion
 # ----------------------------------------
 def make_quaternion(qw, qx, qy, qz):
+    norm = math.sqrt(qw*qw + qx*qx + qy*qy + qz*qz)
+    if norm < 0.001:
+        # Avoid division by zero, return identity
+        q = Quaternion()
+        q.w = 1.0
+        return q
+        
     q = Quaternion()
-    q.w = qw
-    q.x = qx
-    q.y = qy
-    q.z = qz
+    q.w = qw / norm
+    q.x = qx / norm
+    q.y = qy / norm
+    q.z = qz / norm
     return q
 
 
@@ -184,7 +191,8 @@ class WifiBridge(Node):
 
         # Tick differences
         dl = l_ticks - self.prev_left_ticks
-        dr = r_ticks - self.prev_right_ticks
+        # NOTE: Right encoder is physically reversed, flip polarity!
+        dr = -(r_ticks - self.prev_right_ticks)
 
         self.prev_left_ticks = l_ticks
         self.prev_right_ticks = r_ticks
