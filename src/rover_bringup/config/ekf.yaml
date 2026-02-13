@@ -1,7 +1,7 @@
 # filepath: ~/teleop_ws/src/rover_bringup/config/ekf.yaml
 ekf_filter_node:
   ros__parameters:
-    frequency: 30.0
+    frequency: 10.0
     two_d_mode: true
     publish_tf: true
 
@@ -25,11 +25,14 @@ ekf_filter_node:
     # IMU (from ESP32)
     # ------------------------------
     imu0: /imu/data
-    imu0_config: [false, false, false,
-                  false, false, true,  # Trust YAW from IMU
-                  false, false, false,
-                  false, false, true,  # Angular Velocity Z
+      # The IMU hardware is tilted/uncalibrated, causing "Sky" odom.
+      # We disable orientation fusion (first 3 args) to assume robot is flat.
+    imu0_config: [false, false, false, # x, y, z orientation (DISABLED)
+                  true,  true,  true,  # wx, wy, wz (Use Gyro)
+                  false, false, false, # ax, ay, az (Use Accel - Optional but safe)
+                  true,  true,  true,
                   true,  false, false] # Linear Acceleration X
     imu0_differential: false
     imu0_relative: true
     imu0_remove_gravitational_acceleration: true
+```

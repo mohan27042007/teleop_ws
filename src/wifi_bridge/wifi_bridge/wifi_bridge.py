@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist, TwistStamped, TransformStamped, Quaternion
 from nav_msgs.msg import Odometry
+from sensor_msgs.msg import Imu, JointState
 from tf2_ros import TransformBroadcaster
 import socket
 import math
@@ -52,10 +53,16 @@ class WifiBridge(Node):
         # ---- ROS publishers ----
         self.odom_pub = self.create_publisher(Odometry, "/odom", 10)
         self.imu_pub = self.create_publisher(Imu, "/imu/data", 10)
+        self.joint_pub = self.create_publisher(JointState, "/joint_states", 10)
 
         # ---- ROS subscribers (UPDATED FOR JAZZY) ----
         # Perception Guard sends TwistStamped now!
         self.create_subscription(TwistStamped, "/cmd_vel", self.twist_callback, 10)
+
+        # SAFETY WATCHDOG: Prevents Runaway Robot
+        # If no command received for > 0.5s, sends STOP to ESP32
+        self.last_cmd_time = self.get_clock().now()
+        self.watchdog_timer = self.create_timer(0.1, self.check_safety_stop)
 
         # Odometry state variables
         self.x = 0.0
@@ -77,6 +84,9 @@ class WifiBridge(Node):
     # SEND COMMANDS TO ESP32
     # ----------------------------------------
     def twist_callback(self, msg):
+        # Update Watchdog
+        self.last_cmd_time = self.get_clock().now()
+
         # Now handling TwistStamped!
         # Access linear/angular via .twist sub-message
         linear = msg.twist.linear.x
@@ -104,6 +114,17 @@ class WifiBridge(Node):
 
         command = f"M{left_pwm}_{right_pwm}"
         self.sock.sendto(command.encode(), (ESP32_IP, ESP32_PORT))
+
+    # ----------------------------------------
+    # SAFETY WATCHDOG (CRITICAL)
+    # ----------------------------------------
+    def check_safety_stop(self):
+        # If no command received for > 0.5 seconds, Force STOP
+        now = self.get_clock().now()
+        if (now - self.last_cmd_time).nanoseconds > 500 * 1e6:
+            # Send stop command repeatedly (safe redundancy)
+            stop_cmd = "M0_0"
+            self.sock.sendto(stop_cmd.encode(), (ESP32_IP, ESP32_PORT))
 
     # ----------------------------------------
     # RECEIVE UDP DATA FROM ESP32
@@ -233,6 +254,22 @@ class WifiBridge(Node):
         odom.twist.twist.angular.z = d_th / dt if dt > 0 else 0.0
 
         self.odom_pub.publish(odom)
+
+        # ---- Publish Joint States (for RViz wheels) ----
+        # Calculate wheel rotation in radians
+        # Left ticks -> radians
+        left_rad = (l_ticks / self.ticks_per_rev) * (2 * math.pi)
+        # Right ticks -> radians (reversed polarity handled in odom, but here we want raw rotation)
+        # Physical right encoder is reversed, so negative ticks = forward? 
+        # In update_odometry: dr = -(r_ticks - prev). So forward motion decreases r_ticks?
+        # If r_ticks decreases moving forward, then -r_ticks is forward rotation.
+        right_rad = -(r_ticks / self.ticks_per_rev) * (2 * math.pi)
+
+        joint_msg = JointState()
+        joint_msg.header.stamp = time_now.to_msg()
+        joint_msg.name = ["front_left_joint", "rear_left_joint", "front_right_joint", "rear_right_joint"]
+        joint_msg.position = [left_rad, left_rad, right_rad, right_rad]
+        self.joint_pub.publish(joint_msg)
 
 
 def main(args=None):
