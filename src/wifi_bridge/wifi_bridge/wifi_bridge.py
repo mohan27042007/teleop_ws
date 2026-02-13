@@ -219,8 +219,13 @@ class WifiBridge(Node):
         self.prev_right_ticks = r_ticks
 
         # Convert ticks → meters
-        dist_l = (dl / self.ticks_per_rev) * (2 * math.pi * self.wheel_radius)
-        dist_r = (dr / self.ticks_per_rev) * (2 * math.pi * self.wheel_radius)
+        # "TELEPORT FIX": User suggests dividing final velocity by 100.
+        # This implies ticks_per_rev is ~100x higher than 1000.0
+        # Or gearbox ratio is being ignored.
+        scale_factor = 0.01 
+        
+        dist_l = ((dl / self.ticks_per_rev) * (2 * math.pi * self.wheel_radius)) * scale_factor
+        dist_r = ((dr / self.ticks_per_rev) * (2 * math.pi * self.wheel_radius)) * scale_factor
 
         d_dist = (dist_l + dist_r) / 2.0
         d_th = (dist_r - dist_l) / self.wheel_base
