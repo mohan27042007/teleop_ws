@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'wifi_bridge_node = wifi_bridge.wifi_bridge:main',
+            'dummy_driver = wifi_bridge.dummy_driver:main',
         ],
     },
 
